@@ -1,3 +1,21 @@
 <resources>
     <string name="app_name">Calculadora</string>
+    <string name="binary">B</string>
+    <string name="equals_operator">=</string>
+    <string name="plus_operator">+</string>
+    <string name="reset_button">CE</string>
+    <string name="minus_operator">-</string>
+    <string name="num_3">3</string>
+    <string name="num_0">0</string>
+    <string name="num_2">2</string>
+    <string name="num_1">1</string>
+    <string name="multiply_operator">x</string>
+    <string name="num_6">6</string>
+    <string name="num_5">5</string>
+    <string name="num_4">4</string>
+    <string name="divisor_operator">÷</string>
+    <string name="num_9">9</string>
+    <string name="num_8">8</string>
+    <string name="num_7">7</string>
+    <string name="desc_screen">Mostra números digitados</string>
 </resources>

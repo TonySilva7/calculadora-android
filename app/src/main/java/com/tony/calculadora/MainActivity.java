@@ -9,16 +9,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-    private String operator = "";
-    private String n1 = "";
+    private static final String TAG = "myDebug";
 
+    // Variáveis p/ cálculo e screens
+    private String operator = "";
     private Integer num1 = 0;
     private Integer num2 = 0;
     private EditText secondaryDisplay;
     private TextView mainDisplay;
 
-    private static final String TAG = "myDebug";
-
+    // Método ON CREATE iniciando as views
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,18 +29,16 @@ public class MainActivity extends Activity {
         secondaryDisplay = (EditText) findViewById(R.id.secondaryDisplay);
     }
 
-    // método para capturar conteúdo dos botões numéricos e escreve-lo no screen
+    // método para capturar conteúdo dos botões numéricos e escreve-los no screen
     public void getButton(View v) {
         // captura conteúdo do botão
-        n1 = (String) ((Button) v).getText();
+        String n1 = (String) ((Button) v).getText();
         Log.d(TAG, "(String) ((Button) v).getText() = " + n1);
         // escreve na tela dados recebidos
         secondaryDisplay.append(n1);
         mainDisplay.append(n1);
 
     }
-
-    ;
 
     // testa se o conteúdo da tela não está vazio e é maior que zero, então converte-o para inteiro.
     public Integer toNumber() {
@@ -52,8 +50,6 @@ public class MainActivity extends Activity {
             return 0;
         }
     }
-
-    ;
 
     // Método que calcula a soma
     public Integer sum(Integer a, Integer b) {
@@ -149,6 +145,7 @@ public class MainActivity extends Activity {
         num1 = toNumber();
         StringBuffer resultado = new StringBuffer();
         int sobra = 0;
+        // Usa o resto da divisão para fazer a conversão para binários
         do {
             sobra = num1 % 2;
             num1 = num1 / 2;
@@ -161,13 +158,18 @@ public class MainActivity extends Activity {
 
     // Método para imprimir o resultado das operações no screen da calculadora
     public void resultado(View v) {
+        // Recebe o segundo operando
+        num2 = toNumber();
 
-        num2 = toNumber(); // Recebe o segundo operando
         Log.d(TAG, "Num2 = " + num2);
         mainDisplay.append("="); // imprime sinal de "igual"
         secondaryDisplay.setText(""); // limpa display secundário
 
-        // Switch para efetivar o a operação baseado na escolha da operação desejada
+        /*
+         * Switch para efetivar o a operação e imprimir os valores resultantes dessa operação.
+         * As operações binárias serão calculadas e impressas dentro de cada case.
+         * num1 atuará como um acumulador para operações em cadeia.
+         */
         switch (operator) {
             case "+":
                 mainDisplay.append(sum(num1, num2).toString());

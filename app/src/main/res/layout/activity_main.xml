@@ -1,11 +1,10 @@
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
     android:background="#3A3B40"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
     <TextView
@@ -18,7 +17,7 @@
         android:paddingHorizontal="10dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#F1F1F1"
-        android:textSize="50dp"
+        android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@+id/secondaryDisplay"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,20 +25,21 @@
 
     <EditText
         android:id="@+id/secondaryDisplay"
+        android:labelFor="@id/mainDisplay"
         android:layout_width="0dp"
         android:layout_height="79dp"
         android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/roundedbutton_screen"
+        android:autofillHints=""
+        android:background="@drawable/rounded_btn_screen"
+        android:contentDescription="@string/desc_screen"
         android:ems="10"
         android:inputType="text"
         android:paddingHorizontal="10dp"
-        android:textColor="#323338"
+        android:textColor="#999"
         android:textSize="36sp"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,9 +64,9 @@
             android:layout_row="0"
             android:layout_column="0"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/roundedbutton"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="7"
+            android:text="@string/num_7"
             android:textSize="17sp" />
 
         <Button
@@ -76,9 +76,9 @@
             android:layout_height="55dp"
             android:layout_row="0"
             android:layout_column="1"
-            android:background="@drawable/roundedbutton"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="8"
+            android:text="@string/num_8"
             android:textSize="17sp" />
 
         <Button
@@ -88,9 +88,9 @@
             android:layout_height="55dp"
             android:layout_row="0"
             android:layout_column="2"
-            android:background="@drawable/roundedbutton"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="9"
+            android:text="@string/num_9"
             android:textSize="17sp" />
 
         <Button
@@ -100,9 +100,9 @@
             android:layout_height="55dp"
             android:layout_row="0"
             android:layout_column="3"
-            android:background="@drawable/roundedbuttonoperator"
+            android:background="@drawable/rounded_btn_operator"
             android:onClick="getOperation"
-            android:text="÷"
+            android:text="@string/divisor_operator"
             android:textColor="#eeffffff"
             android:textSize="17sp" />
 
@@ -113,11 +113,11 @@
             android:layout_height="55dp"
             android:layout_row="1"
             android:layout_column="0"
-            android:layout_marginRight="7dp"
+            android:layout_marginEnd="7dp"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/roundedbutton"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="4"
+            android:text="@string/num_4"
             android:textSize="17sp" />
 
         <Button
@@ -127,10 +127,10 @@
             android:layout_height="55dp"
             android:layout_row="1"
             android:layout_column="1"
-            android:layout_marginRight="7dp"
-            android:background="@drawable/roundedbutton"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="5"
+            android:text="@string/num_5"
             android:textSize="17sp" />
 
         <Button
@@ -140,10 +140,10 @@
             android:layout_height="55dp"
             android:layout_row="1"
             android:layout_column="2"
-            android:layout_marginRight="7dp"
-            android:background="@drawable/roundedbutton"
+            android:layout_marginEnd="7dp"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="6"
+            android:text="@string/num_6"
             android:textSize="17sp" />
 
         <Button
@@ -153,9 +153,9 @@
             android:layout_height="55dp"
             android:layout_row="1"
             android:layout_column="3"
-            android:background="@drawable/roundedbuttonoperator"
+            android:background="@drawable/rounded_btn_operator"
             android:onClick="getOperation"
-            android:text="x"
+            android:text="@string/multiply_operator"
             android:textColor="#eeffffff"
             android:textSize="17sp" />
 
@@ -167,9 +167,9 @@
             android:layout_row="2"
             android:layout_column="0"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/roundedbutton"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="1"
+            android:text="@string/num_1"
             android:textSize="17sp" />
 
         <Button
@@ -179,9 +179,9 @@
             android:layout_height="55dp"
             android:layout_row="2"
             android:layout_column="1"
-            android:background="@drawable/roundedbutton"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="2"
+            android:text="@string/num_2"
             android:textSize="17sp" />
 
         <Button
@@ -191,9 +191,9 @@
             android:layout_height="55dp"
             android:layout_row="2"
             android:layout_column="2"
-            android:background="@drawable/roundedbutton"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="3"
+            android:text="@string/num_3"
             android:textSize="17sp" />
 
         <Button
@@ -203,34 +203,23 @@
             android:layout_height="55dp"
             android:layout_row="2"
             android:layout_column="3"
-            android:background="@drawable/roundedbuttonoperator"
+            android:background="@drawable/rounded_btn_operator"
             android:onClick="getOperation"
-            android:text="-"
+            android:text="@string/minus_operator"
             android:textColor="#eeffffff"
             android:textSize="17sp" />
 
         <Button
-            android:id="@+id/button13"
+            android:id="@+id/button14"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="86dp"
+            android:layout_width="180dp"
             android:layout_height="55dp"
             android:layout_row="3"
             android:layout_column="0"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/roundedbutton"
-            android:onClick="getOperation"
-            android:text="DEL" />
-
-        <Button
-            android:id="@+id/button14"
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="86dp"
-            android:layout_height="55dp"
-            android:layout_row="3"
-            android:layout_column="1"
-            android:background="@drawable/roundedbutton"
+            android:layout_columnSpan="2"
+            android:background="@drawable/rounded_btn"
             android:onClick="getButton"
-            android:text="0"
+            android:text="@string/num_0"
             android:textSize="17sp" />
 
         <Button
@@ -240,9 +229,9 @@
             android:layout_height="55dp"
             android:layout_row="3"
             android:layout_column="2"
-            android:background="@drawable/roundedbuttonreset"
+            android:background="@drawable/rounded_btn_reset"
             android:onClick="getOperation"
-            android:text="CE" />
+            android:text="@string/reset_button" />
 
         <Button
             android:id="@+id/button16"
@@ -251,9 +240,9 @@
             android:layout_height="55dp"
             android:layout_row="3"
             android:layout_column="3"
-            android:background="@drawable/roundedbuttonoperator"
+            android:background="@drawable/rounded_btn_operator"
             android:onClick="getOperation"
-            android:text="+"
+            android:text="@string/plus_operator"
             android:textColor="#eeffffff"
             android:textSize="17sp" />
 
@@ -261,13 +250,14 @@
             android:id="@+id/button17"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="170dp"
-            android:layout_height="65dp"
+            android:layout_height="55dp"
             android:layout_row="4"
             android:layout_column="2"
             android:layout_columnSpan="2"
-            android:background="@drawable/roundedbuttonoperator"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/rounded_btn_operator"
             android:onClick="resultado"
-            android:text="="
+            android:text="@string/equals_operator"
             android:textColor="#eeffffff"
             android:textSize="17sp" />
 
@@ -275,13 +265,15 @@
             android:id="@+id/button18"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="180dp"
-            android:layout_height="65dp"
+            android:layout_height="55dp"
             android:layout_row="4"
             android:layout_column="0"
             android:layout_columnSpan="2"
-            android:background="@drawable/roundedbutton"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/rounded_btn_binary"
             android:onClick="fazBinario"
-            android:text="B"
+            android:text="@string/binary"
+            android:textColor="@color/white"
             android:textSize="17sp" />
     </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
