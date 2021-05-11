@@ -26,12 +26,18 @@ public class MainActivity extends Activity {
 
         // instancia elementos da view
         mainDisplay = (TextView) findViewById(R.id.mainDisplay);
+        mainDisplay.setText("0");
         secondaryDisplay = (EditText) findViewById(R.id.secondaryDisplay);
     }
 
     // método para capturar conteúdo dos botões numéricos e escreve-los no screen
     public void getButton(View v) {
-        // captura conteúdo do botão
+        // limpa o "0" inicial para ser trocado pelo número digitado
+        String zero = mainDisplay.getText().toString();
+        if (zero.equals("0")) {
+            mainDisplay.setText("");
+        }
+        // captura conteúdo do botão p/ "n1"
         String n1 = (String) ((Button) v).getText();
         Log.d(TAG, "(String) ((Button) v).getText() = " + n1);
         // escreve na tela dados recebidos
@@ -79,7 +85,7 @@ public class MainActivity extends Activity {
             num1 = 0;
             num2 = 0;
             secondaryDisplay.setText("");
-            mainDisplay.setText("");
+            mainDisplay.setText("0");
         } else {
             // Escreve na tela o conteúdo capturado
             mainDisplay.append((String) ((Button) v).getText().toString());
