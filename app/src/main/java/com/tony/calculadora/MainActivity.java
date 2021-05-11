@@ -39,7 +39,6 @@ public class MainActivity extends Activity {
         }
         // captura conteúdo do botão p/ "n1"
         String n1 = (String) ((Button) v).getText();
-        Log.d(TAG, "(String) ((Button) v).getText() = " + n1);
         // escreve na tela dados recebidos
         secondaryDisplay.append(n1);
         mainDisplay.append(n1);
@@ -50,7 +49,6 @@ public class MainActivity extends Activity {
     public Integer toNumber() {
         if ((secondaryDisplay.getText().length() > 0) || !secondaryDisplay.getText().toString().contains("")) {
             int num = Integer.parseInt(String.valueOf(secondaryDisplay.getText()));
-            Log.d(TAG, "numero() retornou " + num);
             return num;
         } else {
             return 0;
@@ -59,7 +57,6 @@ public class MainActivity extends Activity {
 
     // Método que calcula a soma
     public Integer sum(Integer a, Integer b) {
-        Log.d(TAG, "Soma = " + (a + b));
         return (a + b);
     }
 
@@ -89,7 +86,6 @@ public class MainActivity extends Activity {
         } else {
             // Escreve na tela o conteúdo capturado
             mainDisplay.append((String) ((Button) v).getText().toString());
-            Log.d(TAG, "Display Principal = " + ((String) ((Button) v).getText().toString()));
 
             // Se num1 ainda não estiver setado, receberá o primeiro operando
             if (num1 == 0) {
@@ -167,7 +163,6 @@ public class MainActivity extends Activity {
         // Recebe o segundo operando
         num2 = toNumber();
 
-        Log.d(TAG, "Num2 = " + num2);
         mainDisplay.append("="); // imprime sinal de "igual"
         secondaryDisplay.setText(""); // limpa display secundário
 
@@ -179,7 +174,6 @@ public class MainActivity extends Activity {
         switch (operator) {
             case "+":
                 mainDisplay.append(sum(num1, num2).toString());
-                Log.d(TAG, "Case soma (+) = " + sum(num1, num2).toString());
                 num1 = sum(num1, num2);
                 break;
 
